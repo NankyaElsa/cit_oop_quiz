@@ -160,4 +160,43 @@ my_dog.sleep()
 my_dog.make_sound()
 my_dog.bark()
 
+"""9. create a class of your choice. It should have at least 3 attributes and 
+3 methods where one of the methods is a static method. Implement polymorphism, 
+encapsulation, and inheritance"""
+from math import pow,pi
+class Shape:
+    def __init__(self, name):
+        self.name=name
+    def area(self):
+        return 0
+    @staticmethod
+    def volume(self):
+        return 0
+class Cube(Shape):
+    def __init__(self, name, length_of_sides, color):
+        self.__color="blue"
+        super().__init__(name)
+        self.length_of_sides=length_of_sides
+    def getColor(self):
+        return(self.__color)
+    #@staticmethod
+    def volume(self,length_of_sides):
+        print("volume of the cube is {}".format(pow(self.length_of_sides, 3)))
+class Cylinder(Shape):
+    def __init__(self, name, radius, height):
+        super().__init__(name)
+        self.radius=radius
+        self.height=height
+    #@staticmethod
+    def volume(self,radius,height):
+        print("The volume of the cylinder is {}".format(pi*pow(self.radius, 2)* self.height))
+Cylinder.volume(2, 6)
+Cube.volume(6)
+my_shape=Cube("cube",6,"blue")
+print(my_shape.getColor)
+
+
+
+        
+
 
